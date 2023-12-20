@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 17:18:25 by igama             #+#    #+#             */
-/*   Updated: 2023/12/02 18:00:50 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/07 18:44:51 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ Libs:
 unistd.h for function
 
 Prototype:
-size_t	read(int fd, void *buf< size_t cnt)
+size_t	read(int fd, void *buf, size_t cnt)
 
 fd == File descriptor of the file from which data is to be read
 buf == buffer to read data from
@@ -98,9 +98,14 @@ Return 0 if it has reached the end of the file
 Return -1 on error or signal interrupt
 
 IMPORTANT POINTS ON READ:
-buf needs to point to a valid memory location with a length not smaller than the specified size because of overflow.
-fd should be a valid file descriptor returned from open() to perform the read operation because if fd is NULL then the read should generate an error.
-cnt is the requested number of bytes read, while the return value is the actual number of bytes read. Also, some times read system call should read fewer bytes than cnt.
+buf needs to point to a valid memory location with a length not smaller than the
+specified size because of overflow.
+
+fd should be a valid file descriptor returned from open() to perform the read 
+operation because if fd is NULL then the read should generate an error.
+
+cnt is the requested number of bytes read, while the return value is the actual
+number of bytes read. Also, some times read system call should read fewer bytes than cnt.
 
 
 

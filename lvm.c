@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:00:51 by igama             #+#    #+#             */
-/*   Updated: 2023/12/20 19:34:54 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/20 20:54:23 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ LV - Logical Volume
 VG - Volume Groups
 PE - Physical Extents
 LE - Logical Extents
+RAID - Redundant Array of Independent Disks: Is a way of storing the same data in different places.
 
 Suppose there are three disks of 1 terabyte (TB) capacity each. EACH of these physical disks
 is a physical volume (PV), designated PV 1, PV 2, and PV 3.
@@ -71,5 +72,31 @@ of space. In particular, an extent is the smallest amount of space that can be a
 by LVM in Linux. All LVs in a VG are of the same size. LVM maintains a mapping between all
 logical and physical extents. This mapping is merely the LV, which can be expanded by adding
 more extents or shrunk by removing extents.
+
+WHAT ARE THE BENEFITS OF LOGICAL VOLUME MANAGEMENT?
+
+The most obvious benefit of LVM is that it provides an easy and flexible way to scale 
+storage capacity. Admins can scale capacity up or down as users' storage needs change
+by simply adding or removing extents from an LV. The processes for both increasing and
+decreasing capacity are logical and simple. Since LVM provides a logical command 
+structure, the commands are easy to remember and therefore user-friendly.
+
+Another advantage of LVM is that it allows for easy capacity reallocation, 
+meaning the capacity can be reduced in one VG and added to another to match changing
+requirements. There's no need to reformat and repartition the underlying devices in 
+order to take advantage of resizable storage volumes. Traditional partitioning does not
+provide that flexibility.
+
+LVM supports RAID configurations, so sys admins can use LVs to configure RAIDs for data.
+Creating RAID volumes not only improves performance but also minimizes the probability
+of device failure. They can also create striped volumes where data is striped across
+multiple devices, thus improving throughput. Additionally, they can take point-in-time
+snapshots of LVs, both to ensure the consistency of data backups and to test changes
+without adversely impcating real data.
+
+LVM also provides the flexibility to create two other types of volumes: thin volumes and
+cache volumes. Thinly provisioned LVs are larger than the available physical space while
+cache volumes improve the performance of slow block devices by using a fast block device
+(e.g., a solid-state-drive).
 
 */

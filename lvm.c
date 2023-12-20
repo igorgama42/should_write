@@ -6,7 +6,7 @@
 /*   By: igama <igama@student.42.rio>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:00:51 by igama             #+#    #+#             */
-/*   Updated: 2023/12/20 20:54:23 by igama            ###   ########.fr       */
+/*   Updated: 2023/12/20 20:55:45 by igama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,7 @@ LVM also provides the flexibility to create two other types of volumes: thin vol
 cache volumes. Thinly provisioned LVs are larger than the available physical space while
 cache volumes improve the performance of slow block devices by using a fast block device
 (e.g., a solid-state-drive).
+
+Bibliography: https://www.techtarget.com/searchdatacenter/definition/logical-volume-management-LVM
 
 */
